@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'pythone1'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_bf8dbb1a5f6d43d4b048cd9c211f6c0b }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_e043a70adf5d4444aa128bfd719457e5 }}
