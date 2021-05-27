@@ -1,4 +1,4 @@
-from 8d9210f1400a823 import application
+from bb import application
 
 if __name__ == "__main__":
     application.run()
