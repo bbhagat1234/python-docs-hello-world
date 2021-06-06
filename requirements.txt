@@ -27,3 +27,4 @@ chaostoolkit-kubernetes==0.25.0
 chaostoolkit-istio==0.1.4
 pyyaml
 pyodbc
+gevent=1.4.1
