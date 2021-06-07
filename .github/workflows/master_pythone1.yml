@@ -29,8 +29,7 @@ jobs:
 
     - name: Install dependencies
       run: pip install -r requirements.txt
-    - name: startup command
-      run: gunicorn --bind=0.0.0.0 --worker-class gevent -w 1 app:app --access-logfile /var/log/gunicorn-access.log --error-logfile /var/log/gunicorn-error.log --log-level 'debug'
+    
     # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
     - name: Upload artifact for deployment jobs
@@ -61,3 +60,5 @@ jobs:
           app-name: 'pythone1'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_e043a70adf5d4444aa128bfd719457e5 }}
+      - name: startup command
+        run: gunicorn --bind=0.0.0.0 --worker-class gevent -w 1 app:app --access-logfile /var/log/gunicorn-access.log --error-logfile /var/log/gunicorn-error.log --log-level 'debug'
