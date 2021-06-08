@@ -40,7 +40,7 @@ jobs:
           .
           !venv/
     - name: startup command
-      run: sh -c "gunicorn --bind=0.0.0.0 --worker-class gevent -w 1 app:app --access-logfile /var/log/gunicorn-access.log --error-logfile /var/log/gunicorn-error.log --log-level 'debug'"
+      run: sh -c "cd /var/log && touch gunicorn-error.log gunicorn-access.log && chmod -R 775 /var/log/* && gunicorn --bind=0.0.0.0 --worker-class gevent -w 1 app:app --access-logfile /var/log/gunicorn-access.log --error-logfile /var/log/gunicorn-error.log --log-level 'debug'"
 
 
   deploy:
