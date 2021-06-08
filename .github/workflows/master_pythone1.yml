@@ -39,9 +39,6 @@ jobs:
         path: |
           .
           !venv/
-    - name: startup command
-      run: sh -c "cd /var/log && sudo touch gunicorn-error.log gunicorn-access.log && sudo chmod -R 775 /var/log/* && sudo gunicorn --bind=0.0.0.0 --worker-class gevent -w 1 app:app --access-logfile /var/log/gunicorn-access.log --error-logfile /var/log/gunicorn-error.log --log-level 'debug'"
-
 
   deploy:
     runs-on: ubuntu-latest
